@@ -269,6 +269,7 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
+					
 				case 'blocklist': 
 					teks = '𝗕𝗟𝗢𝗖𝗞 𝗟𝗜𝗦𝗧 :\n'
 					for (let block of blocked) {
@@ -277,7 +278,8 @@ client.on('group-participants-update', async (anu) => {
 					teks += `𝗧𝗼𝘁𝗮𝗹 : ${blocked.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break
-                case 'hidetag':
+					
+                                case 'hidetag':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply('kamu siapa?')
 					var value = body.slice(9)
@@ -294,7 +296,8 @@ client.on('group-participants-update', async (anu) => {
 					}
 					client.sendMessage(from, options, text)
 					break
-                case 'quotemaker':
+					
+                               case 'quotemaker':
 					var gh = body.slice(12)
 					var quote = gh.split("|")[0];
 					var wm = gh.split("|")[1];
@@ -306,7 +309,8 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {caption: 'Nih anjim', quoted: mek})
 					break
-                 case 'phlogo':
+					
+                               case 'phlogo':
 					var gh = body.slice(9)
 					var gbl1 = gh.split("|")[0];
 					var gbl2 = gh.split("|")[1];
@@ -316,53 +320,61 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					break
-                case 'truth':
+					
+                              case 'truth':
 					const trut =['¿Alguna vez te ha gustado alguien? ¿Cuánto tiempo? ',' Si puedes o si quieres, en GC / fuera de GC ¿con quién harás amistad? (¿Puedes ser diferente / del mismo sexo) ',' ¿Cuál es tu mayor miedo? ',' ¿Alguna vez te ha gustado alguien y has sentido a esa persona como tú también? ',' ¿Cómo se llama tu exnovio amigo que una vez te gustó en secreto? ',' ¿Alguna vez le has robado el dinero o el padre de tu madre? ¿La razón? ',' ¿Qué te hace feliz cuando estás triste? ',' ¿Alguna vez has tenido amor no correspondido? si alguna vez con quien? ¿cómo te sientes brou? ',' ¿te ha engañado la gente? ',' lo más temido ',' quién es la persona más influyente en tu vida ',' qué cosas de orgullo te has puesto este año ',' quién es la persona que puede ponerte cachondo ',' ¿Quién es la persona que alguna vez te puso cachondo ',' (bgi, que es musulmán) nunca rezó en todo el día? ',' ¿Quién es el más cercano a tu tipo ideal de pareja aquí? ',' ¿Con quién le gusta jugar? ',' ¿Con quién? rechazar a la gente? ¿La razón por qué? ',' Menciona el incidente que te hizo daño y que todavía recuerdas ',' ¿Qué has logrado este año? ',' ¿Cuál fue tu peor hábito en la escuela?']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*VERDAD*\n\n'+ ttrth, quoted: mek })
 					break
+					
 				case 'dare':
 					const dare =['Envía un mensaje a tu ex y dile "Aún me gustas','enamoramiento telefónico / novia ahora y ss al jugador','pap a un miembro del grupo','Dile a la chica: "ERES TAN HERMOSA" y quedra estar contigo','ss llamada reciente de whatsapp','soltar emoticon "🦄💨" cada vez que escribe en gc / pc durante 1 día','envía una nota de voz y di ¿puedo llamarte bebé?','suelte la cita de la canción / cita, luego etiquete al miembro apropiado para la cita','usar fotos de perfil anime hasta por 3 días','escribir en el idioma local las 24 horas','Cambia el nombre a "Soy una niña linda, Luna" durante 5 horas ',' chatea para contactar con el pedido de acuerdo con tu% de batería, sigue diciéndole "tengo suerte de verte ',' chatea con tu ex y dile" te amo, pgn back ',' registro de voz leído surah al-kautsar ',' dijo "Estoy enamorado de ti, ¿quieres ser mi novia?" al sexo opuesto con el que charlaste por última vez (entrégalo en wa / tele), espera a que responda, si ya ss, pasa aquí','indica tu tipo de novia!','fotos de snap / post novia / crush','grita "ME GUSTA EL CAMOTE" luego envíe usando vn aquí','fotografia tu cara y luego envíasela a uno de tus amigos','envía tu foto con una leyenda, soy un niño adoptado','me gusta el pan nwn','grita "Nehro, te quiero nene" frente a tu casa','Cambie el nombre a "BOWO" durante 24 horas.','Finge estar poseído, por ejemplo: posesión de maung, posesión de langostas, posesión de refrigerador, etc.']
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*RETO*\n\n'+ der })
-					break				
+					break	
+					
 				case 'waifu':
 				   anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`)
 				   buf = await getBuffer(anu.image)
 				   texs = ` *anime name* : ${anu.name} \n*deskripsi* : ${anu.desc} \n*source* : ${anu.source}`
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}`})
-				break
+				        break
+					
 				case 'anime':
 					teks = body.slice(7)
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/anime?query=${teks}`, {method: 'get'})
 					reply('anime nya ni '+teks+' adalah :\n\n'+anu.title)
 					break
-                case 'neko':
-                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
-                    buf = await getBuffer(anu.result)
-                    client.sendMessage(from, buf, image, { quoted: mek, caption: 'ih wibu'})
-                break
-                case 'dewabatch':
-                    teks = body.slice(11)
-                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}` , {method: 'get'})
-                    thum = await getBuffer(anu.thumb)
-                    client.sendMessage(from, thum, image, {quoted: mek, caption: `${anu.result}`})
-                 break
-                case 'bug':
-                     const pesan = body.slice(5)
-                      if (pesan.length > 300) return client.sendMessage(from, '𝗟𝗼 𝘀𝗶𝗲𝗻𝘁𝗼, 𝘁𝗲𝘅𝘁𝗼 𝗱𝗲𝗺𝗮𝘀𝗶𝗮𝗱𝗼 𝗹𝗮𝗿𝗴𝗼, 𝗺𝗮́𝘅𝗶𝗺𝗼 𝟯𝟬𝟬 𝘁𝗲𝘅𝘁𝗼', msgType.text, {quoted: mek})
-                        var nomor = mek.participant
-                       const teks1 = `*[REPORT]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
-                      var options = {
-                         text: teks1,
-                         contextInfo: {mentionedJid: [nomor]},
-                     }
-                    client.sendMessage('51916659000@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('Se han informado problemas al propietario del BOT, no se responderá a los informes falsos.')
-                    break
-                case 'ssweb':
+					
+               			case 'neko':
+                    			anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
+                    			buf = await getBuffer(anu.result)
+                    			client.sendMessage(from, buf, image, { quoted: mek, caption: 'ih wibu'})
+                			break
+					
+                		case 'dewabatch':
+                    			teks = body.slice(11)
+                    			anu = await fetchJson(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}` , {method: 'get'})
+                    			thum = await getBuffer(anu.thumb)
+                    			client.sendMessage(from, thum, image, {quoted: mek, caption: `${anu.result}`})
+                 			break
+					
+                		case 'bug':
+                     			const pesan = body.slice(5)
+                      			if (pesan.length > 300) return client.sendMessage(from, '𝗟𝗼 𝘀𝗶𝗲𝗻𝘁𝗼, 𝘁𝗲𝘅𝘁𝗼 𝗱𝗲𝗺𝗮𝘀𝗶𝗮𝗱𝗼 𝗹𝗮𝗿𝗴𝗼, 𝗺𝗮́𝘅𝗶𝗺𝗼 𝟯𝟬𝟬 𝘁𝗲𝘅𝘁𝗼', msgType.text, {quoted: mek})
+                        		var nomor = mek.participant
+                       			const teks1 = `*[REPORT]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
+                      			var options = {
+                         		text: teks1,
+                        		contextInfo: {mentionedJid: [nomor]},
+                     			}
+                    			client.sendMessage('51916659000@s.whatsapp.net', options, text, {quoted: mek})
+                    			reply('Se han informado problemas al propietario del BOT, no se responderá a los informes falsos.')
+                    			break
+					
+                		case 'ssweb':
 					if (args.length < 1) return reply('¿Dónde está la url, tío?')
 					teks = body.slice(7)
 					reply(mess.wait)
@@ -370,39 +382,46 @@ client.on('group-participants-update', async (anu) => {
 					buff = await getBuffer(anu.gambar)
 					client.sendMessage(from, buff, image, {quoted: mek})
 					break
-                case 'bucin':
+					
+                		case 'bucin':
 					gatauda = body.slice(7)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howbucins`, {method: 'get'})
 					reply(anu.desc)
 					break
-		        case 'persengay':
+					
+		        	case 'persengay':
 					gatauda = body.slice(11)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/howbucins`, {method: 'get'})
 					reply(anu.desc+anu.persen)
-					break	
+					break
+					
 				case 'quotes':
 					gatauda = body.slice(8)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/randomquotes`, {method: 'get'})
 					reply(anu.quotes)
-					break		
+					break
+					
 				case 'cerpen':
 					gatauda = body.slice(8)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/cerpen`, {method: 'get'})
 					reply(anu.result.result)
 					break
+					
 				case 'chord':
 					if (args.length < 1) return reply('¿Dónde está el texto, tío?')
 					tels = body.slice(7)
 					anu = await fetchJson(`https://arugaz.herokuapp.com/api/chord?q=${tels}`, {method: 'get'})
 					reply(anu.result)
 					break
-                case 'lirik':
-                    if (args.length < 1) return reply('donde esta el titulo de la cancion, tio')
-                    teha = body.slice(7)
-                    anu = await fetchJson(`https://arugaz.herokuapp.com/api/lirik?judul=${teha}` , {method: 'get'})
-                    reply(anu.result)
-                break
-                case 'pokemon':
+					
+              		  	case 'lirik':
+                    			if (args.length < 1) return reply('donde esta el titulo de la cancion, tio')
+                    			teha = body.slice(7)
+                    			anu = await fetchJson(`https://arugaz.herokuapp.com/api/lirik?judul=${teha}` , {method: 'get'})
+                    			reply(anu.result)
+                			break
+					
+                		case 'pokemon':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=pokemon`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
@@ -410,7 +429,8 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-		case 'meme':
+					
+				case 'meme':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=meme`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
@@ -418,7 +438,8 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-                case 'anjing':
+					
+                		case 'anjing':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
@@ -426,19 +447,22 @@ client.on('group-participants-update', async (anu) => {
 					pok = await getBuffer(nimek)
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
-                case 'spamcall':
-                   if (args.length < 1) return ('ingrese el número de destino')
-                   weha = body.slice(10)
-                   anu = await fetchJson(`https://arugaz.herokuapp.com/api/spamcall?no=${weha}` , {method: 'get'})
-                   client.sendMessage(from, anu.logs, text, {quoted: mek})
-                 break
-                case 'indohot':
-                   if (!isNsfw) return reply('NSFW no está activo')
-                   anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
-                   if (anu.error) return reply(anu.error)
-                   hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
-                   client.sendMessage(from, hasil, text, {quoted: mek})
-                   break
+					
+                		case 'spamcall':
+                   			if (args.length < 1) return ('ingrese el número de destino')
+                   			weha = body.slice(10)
+                   			anu = await fetchJson(`https://arugaz.herokuapp.com/api/spamcall?no=${weha}` , {method: 'get'})
+                   			client.sendMessage(from, anu.logs, text, {quoted: mek})
+                 			break
+					
+                		case 'indohot':
+                   			if (!isNsfw) return reply('NSFW no está activo')
+                   			anu = await fetchJson(`https://arugaz.herokuapp.com/api/indohot`, {method: 'get'})
+                   			if (anu.error) return reply(anu.error)
+                   			hasil = `*judul* \n${anu.result.judul} *genre* \n${anu.result.genre} *durasi* \n${anu.result.durasi} *url* \n${anu.result.url}`
+                   			client.sendMessage(from, hasil, text, {quoted: mek})
+                   			break
+					
 				case 'ytmp4':
 					if (args.length < 1) return reply('¿Dónde está la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -450,6 +474,7 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
 					break
+					
 				case 'ytmp3':
 					if (args.length < 1) return reply('¿Dónde está la URL?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -461,34 +486,39 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result)
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
 					break
-                case 'text3d':
-              	    if (args.length < 1) return reply('¿Dónde está el texto sis?')
-                    teks = `${body.slice(8)}`
-                    if (teks.length > 10) return client.sendMessage(from, 'El texto es largo, un máximo de 10 frases', text, {quoted: mek})
-                    buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
-                    client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
-			     	break
-			    case 'fototiktok':
-                    gatauda = body.slice(12)
-                    anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${gatauda}`)
-			        buff = await getBuffer(anu.result)
-                    reply(anu.result)
-			        break
-			    case 'map':
-                anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
-                buffer = await getBuffer(anu.gambar)
-                client.sendMessage(from, buffer, image, {quoted: mek, caption: `${body.slice(5)}`})
-				break
-                case 'kbbi':
+					
+                		case 'text3d':
+              	    			if (args.length < 1) return reply('¿Dónde está el texto sis?')
+                    			teks = `${body.slice(8)}`
+                    			if (teks.length > 10) return client.sendMessage(from, 'El texto es largo, un máximo de 10 frases', text, {quoted: mek})
+                    			buff = await getBuffer(`https://docs-jojo.herokuapp.com/api/text3d?text=${teks}`, {method: 'get'})
+                    			client.sendMessage(from, buff, image, {quoted: mek, caption: `${teks}`})
+			     		break
+					
+			    	case 'fototiktok':
+                    			gatauda = body.slice(12)
+                    			anu = await fetchJson(`https://docs-jojo.herokuapp.com/api/tiktokpp?user=${gatauda}`)
+			        	buff = await getBuffer(anu.result)
+                    			reply(anu.result)
+			        	break
+					
+			    	case 'map':
+                			anu = await fetchJson(`https://mnazria.herokuapp.com/api/maps?search=${body.slice(5)}`, {method: 'get'})
+                			buffer = await getBuffer(anu.gambar)
+                			client.sendMessage(from, buffer, image, {quoted: mek, caption: `${body.slice(5)}`})
+					break
+               	 		case 'kbbi':
 					if (args.length < 1) return reply('¿Qué quieres buscar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/kbbi?search=${body.slice(6)}`, {method: 'get'})
 					reply('Menurut Kbbi:\n\n'+anu.result)
 					break
-                case 'artinama':
+					
+                		case 'artinama':
 					if (args.length < 1) return reply('¿Qué quieres buscar?')
 					anu = await fetchJson(`https://mnazria.herokuapp.com/api/arti?nama=${body.slice(10)}`, {method: 'get'})
 					reply('Menurut nama:\n\n'+anu.result)
 					break
+					
 				case 'ocr': 
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -565,10 +595,11 @@ client.on('group-participants-update', async (anu) => {
 					}
 					break
 				case 'getses':
-            	if (!isOwner) return reply(mess.only.ownerB)
-            const sesPic = await client.getSnapshot()
-            client.sendFile(from, sesPic, 'session.png', '>~<...', id)
-            break	
+            				if (!isOwner) return reply(mess.only.ownerB)
+           			 	const sesPic = await client.getSnapshot()
+            				client.sendFile(from, sesPic, 'session.png', '>~<...', id)
+            				break
+					
 				case 'gtts':	
 				case 'tts':
 					if (args.length < 1) return client.sendMessage(from, 'Código de idioma requerido !!', text, {quoted: mek})
@@ -589,17 +620,20 @@ client.on('group-participants-update', async (anu) => {
 						})
 					})
 					break
+					
 				case 'setprefix':
 					if (args.length < 1) return
 					if (!isOwner) return reply(mess.only.ownerB)
 					prefix = args[0]
 					reply(`𝗣𝗿𝗲𝗳𝗶𝘅 𝗯𝗲𝗿𝗵𝗮𝘀𝗶𝗹 𝗱𝗶 𝘂𝗯𝗮𝗵 𝗺𝗲𝗻𝗷𝗮𝗱𝗶 : ${prefix}`)
 					break 
+					
 				case 'hilih': 
 					if (args.length < 1) return reply('dame el texto!! >:v')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/hilih?teks=${body.slice(7)}`, {method: 'get'})
 					reply(anu.result)
 					break
+					
 				case 'tiktokstalk':
 					try {
 						if (args.length < 1) return client.sendMessage(from, '𝗤𝗨𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 ?', text, {quoted: mek})
@@ -613,22 +647,25 @@ client.on('group-participants-update', async (anu) => {
 						reply('[𝗘𝗥𝗥𝗢𝗥] 𝗣𝗢𝗦𝗜𝗕𝗟𝗘𝗠𝗘𝗡𝗧𝗘 𝗡𝗢𝗠𝗕𝗥𝗘 𝗗𝗘 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 𝗡𝗢 𝗩𝗔́𝗟𝗜𝗗𝗢')
 					}
 					break
+					
 				case 'fitnah':	
 				case 'fake':          
-               if (!isGroup) return reply(mess.only.group)
-                arg = body.substring(body.indexOf(' ') + 1)
-				isi = arg.split(' |')[0] 
-				pesan = arg.split('|')[1] 
-				pesan2 = arg.split('|')[2] 
-                reply(pesan, isi, pesan2)
-                break
-                 case 'linkgc':
-				    if (!isGroup) return reply(mess.only.group)
-				    if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-				    linkgc = await client.groupInviteCode (from)
-				    yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
-				    client.sendMessage(from, yeh, text, {quoted: mek})
-			        break
+               				if (!isGroup) return reply(mess.only.group)
+                			arg = body.substring(body.indexOf(' ') + 1)
+					isi = arg.split(' |')[0] 
+					pesan = arg.split('|')[1] 
+					pesan2 = arg.split('|')[2] 
+                			reply(pesan, isi, pesan2)
+                			break
+					
+                 		case 'linkgc':
+				    	if (!isGroup) return reply(mess.only.group)
+				    	if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+				    	linkgc = await client.groupInviteCode (from)
+				    	yeh = `https://chat.whatsapp.com/${linkgc}\n\nlink Group *${groupName}*`
+				    	client.sendMessage(from, yeh, text, {quoted: mek})
+			        	break
+					
 				case 'tagall':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -641,6 +678,7 @@ client.on('group-participants-update', async (anu) => {
 					}
 					mentions(teks, members_id, true)
 					break
+					
 				case 'clearall':
 					if (!isOwner) return reply(' *YO SOY QUIEN* ?')
 					anu = await client.chats.all()
@@ -650,25 +688,29 @@ client.on('group-participants-update', async (anu) => {
 					}
 					reply('𝗕𝗢𝗥𝗥𝗔𝗥 𝗧𝗢𝗗𝗢 𝗘𝗟 𝗘́𝗫𝗜𝗧𝗢 𝗗𝗘 𝗬𝗔𝗛  :)')
 					break
+					
 			       case 'block':
-				 client.updatePresence(from, Presence.composing) 
-				 client.chatRead (from)
+				 	client.updatePresence(from, Presence.composing) 
+				 	client.chatRead (from)
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
 					client.blockUser (`${body.slice(7)}@c.us`, "add")
 					client.sendMessage(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
 					break
-                    case 'unblock':
+					
+                    		case 'unblock':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
-				    client.blockUser (`${body.slice(9)}@c.us`, "remove")
+				    	client.blockUser (`${body.slice(9)}@c.us`, "remove")
 					client.sendMessage(from, `𝗽𝗲𝗿𝗶𝗻𝘁𝗮𝗵 𝗗𝗶𝘁𝗲𝗿𝗶𝗺𝗮, 𝗺𝗲𝗺𝗯𝘂𝗸𝗮 ${body.slice(9)}@c.us`, text)
-				break
+					break
+					
 				case 'leave': 
-				if (!isGroup) return reply(mess.only.group)
+					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(mess.only.ownerB)
-				await client.leaveGroup(from, '𝗕𝘆𝗲𝗲', groupId)
-                    break
+					await client.leaveGroup(from, '𝗕𝘆𝗲𝗲', groupId)
+                    			break
+					
 				case 'bc': 
 					if (!isOwner) return reply(' *YO SOY QUIEN* ?') 
 					if (args.length < 1) return reply('.......')
@@ -687,14 +729,16 @@ client.on('group-participants-update', async (anu) => {
 						reply('𝘿𝙄𝙁𝙐𝙎𝙄𝙊́𝙉 𝘿𝙀 𝙀́𝙓𝙄𝙏𝙊𝙎 ')
 					}
 					break
+					
 			   	case 'setpp': 
-                        if (!isGroup) return reply(mess.only.group)
-                       if (!isGroupAdmins) return reply(mess.only.admin)
-                        if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                       media = await client.downloadAndSaveMediaMessage(mek)
-                         await client.updateProfilePicture (from, media)
-                        reply('𝗖𝗔𝗠𝗕𝗜𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗢 𝗗𝗘 𝗜𝗖𝗢𝗡𝗢 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢')
-                break						
+                        		if (!isGroup) return reply(mess.only.group)
+                       			if (!isGroupAdmins) return reply(mess.only.admin)
+                        		if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+                       			media = await client.downloadAndSaveMediaMessage(mek)
+                         		await client.updateProfilePicture (from, media)
+                        		reply('𝗖𝗔𝗠𝗕𝗜𝗢 𝗘𝗫𝗜𝗧𝗢𝗦𝗢 𝗗𝗘 𝗜𝗖𝗢𝗡𝗢 𝗗𝗘 𝗚𝗥𝗨𝗣𝗢')
+                			break
+					
 				case 'add':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -709,8 +753,9 @@ client.on('group-participants-update', async (anu) => {
 						reply('No se pudo agregar el destino, tal vez porque es privado, F')
 					}
 					break
-					case 'grup':
-					case 'group':
+					
+				case 'grup':
+				case 'group':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -723,27 +768,30 @@ client.on('group-participants-update', async (anu) => {
 					}
 					break
                     
-            case 'admin':
-            case 'owner':
-            case 'creator':
-                  client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       client.sendMessage(from, 'Este es mi número de propietario >_<, no enviar spam ni bloquearlo',MessageType.text, { quoted: mek} )
-           break    
-           case 'setname':
-                if (!isGroup) return reply(mess.only.group)
-			    if (!isGroupAdmins) return reply(mess.only.admin)
-				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                client.groupUpdateSubject(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Éxito, cambiar el nombre del grupo', text, {quoted: mek})
-                break
-                case 'setdesc':
-                if (!isGroup) return reply(mess.only.group)
-			    if (!isGroupAdmins) return reply(mess.only.admin)
-				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
-                client.groupUpdateDescription(from, `${body.slice(9)}`)
-                client.sendMessage(from, 'Éxito, cambio de descripción del grupo', text, {quoted: mek})
-                break
-           case 'demote':
+            			case 'admin':
+            			case 'owner':
+            			case 'creator':
+                  			client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
+       					client.sendMessage(from, 'Este es mi número de propietario >_<, no enviar spam ni bloquearlo',MessageType.text, { quoted: mek} )
+           				break
+					
+           			case 'setname':
+                			if (!isGroup) return reply(mess.only.group)
+			    		if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+                			client.groupUpdateSubject(from, `${body.slice(9)}`)
+                			client.sendMessage(from, 'Éxito, cambiar el nombre del grupo', text, {quoted: mek})
+                			break
+					
+                		case 'setdesc':
+                			if (!isGroup) return reply(mess.only.group)
+			    		if (!isGroupAdmins) return reply(mess.only.admin)
+					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
+                			client.groupUpdateDescription(from, `${body.slice(9)}`)
+                			client.sendMessage(from, 'Éxito, cambio de descripción del grupo', text, {quoted: mek})
+               	 			break
+					
+           			case 'demote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
 					if (!isBotGroupAdmins) return reply(mess.only.Badmin)
@@ -762,6 +810,7 @@ client.on('group-participants-update', async (anu) => {
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
+					
 				case 'promote':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -780,7 +829,8 @@ client.on('group-participants-update', async (anu) => {
 						mentions(`𝗙𝗘𝗟𝗜𝗖𝗜𝗧𝗔𝗖𝗜𝗢𝗡𝗘𝗦🥳 @${mentioned[0].split('@')[0]} 𝗣𝗢𝗥 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗥𝗦𝗘 𝗘𝗡 𝗔𝗗𝗠𝗜𝗡 𝗗𝗘𝗟 𝗚𝗥𝗢𝗨𝗣 (+_+)`, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
-					break	
+					break
+					
 			     	case 'kick':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -800,6 +850,7 @@ client.on('group-participants-update', async (anu) => {
 						client.groupRemove(from, mentioned)
 					}
 					break
+					
 				case 'listadmin':
 					if (!isGroup) return reply(mess.only.group)
 					teks = `LISTA DE ADMINS DEL GRUPO *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
@@ -810,6 +861,7 @@ client.on('group-participants-update', async (anu) => {
 					}
 					mentions(teks, groupAdmins, true)
 					break
+					
 				case 'toimg':
 					if (!isQuotedSticker) return reply('𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗘 𝗘𝗟 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 !')
 					reply(mess.wait)
@@ -824,6 +876,7 @@ client.on('group-participants-update', async (anu) => {
 						fs.unlinkSync(ran)
 					})
 					break
+					
 				case 'simih':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -841,6 +894,7 @@ client.on('group-participants-update', async (anu) => {
 						reply(' *Escriba el comando 1 para activar, 0 para desactivar* \nEJEMLPO: 𝘀𝗶𝗺𝗶𝗵 𝟭')
 					}
 					break
+					
 				case 'nsfw':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -858,6 +912,7 @@ client.on('group-participants-update', async (anu) => {
 						reply(' *1 PARA ACTIVAR, 0 PARA APAGAR* \nEJEMPLO: 𝗻𝘀𝗳𝘄 𝟭')
 					}
 					break
+					
 				case 'welcome':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
@@ -874,6 +929,8 @@ client.on('group-participants-update', async (anu) => {
 					} else {
 						reply(' *1 PARA ACTIVAR, 0 PARA APAGAR* \n *EJEMPLO: ${prefix}welcome 1*')
 					}
+					break
+					
 				case 'clone':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isOwner) return reply(' *YO SOY* ?') 
@@ -890,6 +947,7 @@ client.on('group-participants-update', async (anu) => {
 						reply(' *Bueno, falló ;( , intenta repetir :v* ')
 					}
 					break
+					
 				case 'wait':
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						reply(mess.wait)
@@ -904,8 +962,8 @@ client.on('group-participants-update', async (anu) => {
 						reply(' *𝗘𝗡𝗩𝗜𝗔𝗥 𝗙𝗢𝗧𝗢𝗦 𝗖𝗢𝗡 𝗦𝗨𝗕𝗧𝗜́𝗧𝗨𝗟𝗢 𝗢𝗖𝗥* ')
 					}
 					break
-				default:
-			if (isGroup && isSimi && budy != undefined) {
+					default:
+						if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
 						muehe = await simih(budy)
 						console.log(muehe)
