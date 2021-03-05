@@ -324,17 +324,39 @@ client.on('group-participants-update', async (anu) => {
                               case 'truth':
 					const trut =['¿Alguna vez te ha gustado alguien? ¿Cuánto tiempo? ',' Si puedes o si quieres, en GC / fuera de GC ¿con quién harás amistad? (¿Puedes ser diferente / del mismo sexo) ',' ¿Cuál es tu mayor miedo? ',' ¿Alguna vez te ha gustado alguien y has sentido a esa persona como tú también? ',' ¿Cómo se llama tu exnovio amigo que una vez te gustó en secreto? ',' ¿Alguna vez le has robado el dinero o el padre de tu madre? ¿La razón? ',' ¿Qué te hace feliz cuando estás triste? ',' ¿Alguna vez has tenido amor no correspondido? si alguna vez con quien? ¿cómo te sientes brou? ',' ¿te ha engañado la gente? ',' lo más temido ',' quién es la persona más influyente en tu vida ',' qué cosas de orgullo te has puesto este año ',' quién es la persona que puede ponerte cachondo ',' ¿Quién es la persona que alguna vez te puso cachondo ',' (bgi, que es musulmán) nunca rezó en todo el día? ',' ¿Quién es el más cercano a tu tipo ideal de pareja aquí? ',' ¿Con quién le gusta jugar? ',' ¿Con quién? rechazar a la gente? ¿La razón por qué? ',' Menciona el incidente que te hizo daño y que todavía recuerdas ',' ¿Qué has logrado este año? ',' ¿Cuál fue tu peor hábito en la escuela?']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
-					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+					truteh = await getBuffer(`https://i.ibb.co/K9JQXT2/d0604dc9ecbfdad5e320d3a8a0506da6.jpg`)
 					client.sendMessage(from, truteh, image, { caption: '*VERDAD*\n\n'+ ttrth, quoted: mek })
 					break
 					
 				case 'dare':
 					const dare =['Envía un mensaje a tu ex y dile "Aún me gustas','enamoramiento telefónico / novia ahora y ss al jugador','pap a un miembro del grupo','Dile a la chica: "ERES TAN HERMOSA" y quedra estar contigo','ss llamada reciente de whatsapp','soltar emoticon "🦄💨" cada vez que escribe en gc / pc durante 1 día','envía una nota de voz y di ¿puedo llamarte bebé?','suelte la cita de la canción / cita, luego etiquete al miembro apropiado para la cita','usar fotos de perfil anime hasta por 3 días','escribir en el idioma local las 24 horas','Cambia el nombre a "Soy una niña linda, Luna" durante 5 horas ',' chatea para contactar con el pedido de acuerdo con tu% de batería, sigue diciéndole "tengo suerte de verte ',' chatea con tu ex y dile" te amo, pgn back ',' registro de voz leído surah al-kautsar ',' dijo "Estoy enamorado de ti, ¿quieres ser mi novia?" al sexo opuesto con el que charlaste por última vez (entrégalo en wa / tele), espera a que responda, si ya ss, pasa aquí','indica tu tipo de novia!','fotos de snap / post novia / crush','grita "ME GUSTA EL CAMOTE" luego envíe usando vn aquí','fotografia tu cara y luego envíasela a uno de tus amigos','envía tu foto con una leyenda, soy un niño adoptado','me gusta el pan nwn','grita "Nehro, te quiero nene" frente a tu casa','Cambie el nombre a "BOWO" durante 24 horas.','Finge estar poseído, por ejemplo: posesión de maung, posesión de langostas, posesión de refrigerador, etc.']
 					const der = dare[Math.floor(Math.random() * dare.length)]
-					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
+					tod = await getBuffer(`https://i.ibb.co/K9JQXT2/d0604dc9ecbfdad5e320d3a8a0506da6.jpg`)
 					client.sendMessage(from, tod, image, { quoted: mek, caption: '*RETO*\n\n'+ der })
 					break	
 					
+				case 'rolette':
+					const rolet =['Boom, mala suerte amigo, haz perdido\nIntente denuevo','Vaya suerte tienes amigo, sobreviviste a esta ronda','Boom, mala suerte amigo, haz perdido\nIntente denuevo ','Vaya suerte tienes amigo, sobreviviste a esta ronda','Boom, mala suerte amigo, haz perdido\nIntente denuevo','Vaya suerte tienes amigo, sobreviviste a esta ronda']
+					const rol = rolet[Math.floor(Math.random() * rolet.length)]
+					role = await getBuffer(`https://i.ibb.co/M2DZqcb/Ea-PROZJXs-AE4-QQz.jpg`)
+					client.sendMessage(from, role, image, { caption: '*Juega con Bocchi*\n\n'+ rol, quoted: mek })
+					break
+				
+				case 'hentai':
+					   if (!isNsfw) return reply('NSFW no está activo')
+						const hen =['https://cdn.nekos.life/erok/ero_kitsune_093.jpg','','https://cdn.nekos.life/classic/classic254.gif','https://cdn.nekos.life/classic/classic_049.gif','https://cdn.nekos.life/classic/classic_044.gif','https://cdn.nekos.life/classic/classic_003.gif','https://cdn.nekos.life/classic/classic_479.gif','https://cdn.nekos.life/Random_hentai_gif/Random_hentai_gifNB_1438.gif','https://cdn.nekos.life/Random_hentai_gif/Random_hentai_gifNB1023.gif','https://cdn.nekos.life/Random_hentai_gif/Random_hentai_gifNB0524.gif','https://cdn.nekos.life/Random_hentai_gif/Random_hentai_gifNB0852.gif','https://cdn.nekos.life/erok/ero_kitsune_033.png','https://cdn.nekos.life/erok/ero_kitsune_104.jpg','https://cdn.nekos.life/erok/ero_kitsune_004.png','https://cdn.nekos.life/erok/ero_kitsune_071.jpg','https://cdn.nekos.life/erok/ero_kitsune_002.png','https://cdn.nekos.life/erok/ero_kitsune_022.jpg','https://cdn.nekos.life/erok/ero_kitsune_022.jpg','https://cdn.nekos.life/erok/ero_kitsune_055.jpg','https://cdn.nekos.life/erok/ero_kitsune_025.jpg','https://cdn.nekos.life/erok/ero_kitsune_103.jpg','https://cdn.nekos.life/erok/ero_kitsune_028.png','https://cdn.nekos.life/erok/ero_kitsune_014.jpg','https://cdn.nekos.life/erok/ero_kitsune_005.jpg','https://cdn.nekos.life/erok/ero_kitsune_079.jpg','https://cdn.nekos.life/erok/ero_kitsune_046.jpg','https://cdn.nekos.life/erok/ero_kitsune_077.jpg',]
+						const henta = hen[Math.floor(Math.random() * hen.length)]
+						het = await getBuffer(`${henta}`)
+						client.sendMessage(from, het, image, { caption: 'riko xd ', quoted: mek })
+						break
+
+				
+			    	case 'confirmas?':
+						const conf =['https://i.ibb.co/Z85HKDv/en-un-rato-te-confirmo.jpg','https://i.ibb.co/qncWWRw/Desconfirmo.jpg','https://i.ibb.co/2qykqmx/confirmamos.jpg','https://i.ibb.co/C7v9qvq/confirmo.jpg']
+						const conif = conf[Math.floor(Math.random() * conf.length)]
+						confirma = await getBuffer(`${conif}`)
+						client.sendMessage(from, confirma, image, { caption: '*EL BOT....*', quoted: mek })
+						break
 				case 'waifu':
 				   anu = await fetchJson(`https://arugaz.herokuapp.com/api/waifu`)
 				   buf = await getBuffer(anu.image)
@@ -342,24 +364,14 @@ client.on('group-participants-update', async (anu) => {
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}`})
 				        break
 					
-				case 'anime':
-					teks = body.slice(7)
-					anu = await fetchJson(`https://mnazria.herokuapp.com/api/anime?query=${teks}`, {method: 'get'})
-					reply('anime nya ni '+teks+' adalah :\n\n'+anu.title)
-					break
-					
-               			case 'neko':
-                    			anu = await fetchJson(`https://arugaz.herokuapp.com/api/nekonime` , {method: 'get'})
-                    			buf = await getBuffer(anu.result)
-                    			client.sendMessage(from, buf, image, { quoted: mek, caption: 'ih wibu'})
-                			break
-					
+	
                 		case 'dewabatch':
                     			teks = body.slice(11)
                     			anu = await fetchJson(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}` , {method: 'get'})
                     			thum = await getBuffer(anu.thumb)
                     			client.sendMessage(from, thum, image, {quoted: mek, caption: `${anu.result}`})
                  			break
+					
 					
                 		case 'bug':
                      			const pesan = body.slice(5)
@@ -439,8 +451,87 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, pok, image, { quoted: mek })
 					break
 					
-                		case 'anjing':
+                			case 'meme':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=meme`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'cars':
+				    anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=cars`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+		case 'bocchi':
+						anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=bocchi`, {method: 'get'})
+						reply(mess.wait)
+						var n = JSON.parse(JSON.stringify(anu));
+						var nimek =  n[Math.floor(Math.random() * n.length)];
+						pok = await getBuffer(nimek)
+						client.sendMessage(from, pok, image, { quoted: mek })
+						break
+		
+		case 'animegirl':
+			anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime%20girl`, {method: 'get'})
+			reply(mess.wait)
+			var n = JSON.parse(JSON.stringify(anu));
+			var nimek =  n[Math.floor(Math.random() * n.length)];
+			pok = await getBuffer(nimek)
+			client.sendMessage(from, pok, image, { quoted: mek })
+			break
+
+			case 'animeimg':
+				anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime`, {method: 'get'})
+				reply(mess.wait)
+				var n = JSON.parse(JSON.stringify(anu));
+				var nimek =  n[Math.floor(Math.random() * n.length)];
+				pok = await getBuffer(nimek)
+				client.sendMessage(from, pok, image, { quoted: mek })
+				break
+
+		case 'loli':
+			anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=loli`, {method: 'get'})
+			reply(mess.wait)
+			var n = JSON.parse(JSON.stringify(anu));
+			var nimek =  n[Math.floor(Math.random() * n.length)];
+			pok = await getBuffer(nimek)
+			client.sendMessage(from, pok, image, { quoted: mek })
+			break
+
+                case 'dogs':
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anjing`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+					break
+				case 'neko':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=neko`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+						break
+
+						case 'icon':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=icon%20anime`, {method: 'get'})
+					reply(mess.wait)
+					var n = JSON.parse(JSON.stringify(anu));
+					var nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek })
+						break
+		
+
+			   case 'gato':
+					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=gato`, {method: 'get'})
 					reply(mess.wait)
 					var n = JSON.parse(JSON.stringify(anu));
 					var nimek =  n[Math.floor(Math.random() * n.length)];
@@ -484,7 +575,7 @@ client.on('group-participants-update', async (anu) => {
 					thumb = await getBuffer(anu.thumb)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
 					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
 					
                 		case 'text3d':
