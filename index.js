@@ -630,7 +630,21 @@ client.on('group-participants-update', async (anu) => {
 						buffer = await getBuffer(result.img)
 						client.sendMessage(from, buffer, image, {caption: `${textosh}`, quoted: mek})
 						break
-					
+				
+					case 'blowjob1':
+					if (!isNsfw) return reply('NSFW no está activo')
+						  ranp = getRandom('.gif')
+						  rano = getRandom('.webp')
+						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob?apikey=BotWeA`, {method: 'get'})
+						  if (anu.error) return reply(anu.error)
+						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+							  fs.unlinkSync(ranp)
+							  if (err) return reply(ind.stikga())
+							  buffer = fs.readFileSync(rano)
+							  client.sendMessage(from, buffer, sticker, {quoted: mek})
+							  fs.unlinkSync(rano)
+						  })
+						  break
 /*
 	]=========> ANIME DEL BOT <=========[
 	*/			    	
@@ -1184,30 +1198,12 @@ client.on('group-participants-update', async (anu) => {
 						reply(' *Bueno, falló ;( , intenta repetir :v* ')
 					}
 					break
-					case 'blowjob1':
-						if (isBanned) return reply(ind.baned())
-					  if (!isRegistered) return reply(ind.noregis())
-					  if (!isPrem) return reply(ind.premium())
-						  ranp = getRandom('.gif')
-						  rano = getRandom('.webp')
-						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob?apikey=BotWeA`, {method: 'get'})
-						  if (anu.error) return reply(anu.error)
-						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-							  fs.unlinkSync(ranp)
-							  if (err) return reply(ind.stikga())
-							  buffer = fs.readFileSync(rano)
-							  client.sendMessage(from, buffer, sticker, {quoted: mek})
-							  fs.unlinkSync(rano)
-						  })
-						  break
+					
 					  case 'stickersad':
-						if (isBanned) return reply(ind.baned())
-					  if (!isRegistered) return reply(ind.noregis())
-					  if (!isPrem) return reply(ind.premium())
 						  ranp = getRandom('.gif')
 						  rano = getRandom('.webp')
 						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cry?apikey=BotWeA`, {method: 'get'})
-						  reply('「❗」 AMOR Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
+						  reply('「❗」 Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
 						  if (anu.error) return reply(anu.error)
 						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 							  fs.unlinkSync(ranp)
@@ -1218,13 +1214,10 @@ client.on('group-participants-update', async (anu) => {
 						  })
 						  break
 						  case 'stickerkiss':
-						if (isBanned) return reply(ind.baned())
-					  if (!isRegistered) return reply(ind.noregis())
-					  if (!isPrem) return reply(ind.premium())
 						  ranp = getRandom('.gif')
 						  rano = getRandom('.webp')
 						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/kiss?apikey=BotWeA`, {method: 'get'})
-						  reply('「❗」 AMOR Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
+						  reply('「❗ Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
 						  if (anu.error) return reply(anu.error)
 						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 							  fs.unlinkSync(ranp)
@@ -1235,13 +1228,11 @@ client.on('group-participants-update', async (anu) => {
 						  })
 						  break
 						  case 'stickerhug':
-						if (isBanned) return reply(ind.baned())
-					  if (!isRegistered) return reply(ind.noregis())
-					  if (!isPrem) return reply(ind.premium())
+						
 						  ranp = getRandom('.gif')
 						  rano = getRandom('.webp')
 						  anu = await fetchJson(`https://tobz-api.herokuapp.com/api/hug?apikey=BotWeA`, {method: 'get'})
-						  reply('「❗」 AMOR Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
+						  reply('「❗」Pausa 1 MINUTO FUERA ESTE SÍ HERMANO')
 						  if (anu.error) return reply(anu.error)
 						  exec(`wget ${anu.result} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
 							  fs.unlinkSync(ranp)
