@@ -264,50 +264,63 @@ client.on('group-participants-update', async (anu) => {
 						imagenter = await getBuffer(`https://pbs.twimg.com/profile_images/560079833107951617/k1VDVKJT.png`)
 						client.sendMessage(from, imagenter, image, { caption: `${menuter}`, quoted: mek })
 						break
-
+				
+				case 'funmenu':
+						menuf = `*┏━━━━▒⃟🔰⃫❮ҒႮΝᎷ❯ ⃫🔰⃟▒━━┓*\n┃cosas para pasar el rato\n┣━━━━━━━━━━━━━━━━━━━\n┃\n┣⊱ *#rolette*\n┃➥ _Juego de ruleta rusa_\n┣⊱ *#truth*\n┃➥ _verdad de verdad o reto_\n┣⊱ *#dare*\n┃➥ _reto de verdad o reto_\n┣⊱ *#chance +texto*\n┃➥ _probabilidad de que ocurra_\n┣⊱ *#arg +tetx*\n┃➥ _respuestas del Bot_\n┣⊱ *#confirmas?*\n┃➥ _confirma o desconfirma_\n┃\n┷━━━━━━━━▧▣▧━━━━━━━━`
+						imagefun = await getBuffer(`https://i.pinimg.com/564x/10/be/a6/10bea6143e44274c82dc76a21c42a570.jpg`)
+						client.sendMessage(from, imagefun, image, { caption: `${menuf}`, quoted: mek })
+						break
+					
+				case 'animemenu':
+						menuani = `*┏━━━▒⃟🔰⃫❮ANIMENU❯ ⃫🔰⃟▒━┓*\n┃Menu de anime del bot\n┣━━━━━━━━━━━━━━━━━━\n┃\n┣⊱ *#wait +imagen*\n┃➥ _Buscar el anime con una_\n┃ _Imagen_\n┣⊱ *#loli*\n┃➥ _Imagen de loli_\n┣⊱ *#waifu*\n┃➥ _Imagen e informacion_\n┣⊱ *#animegirl*\n┃➥ _Imagen de chica anime_\n┣⊱ *#icon*\n┃➥ _perfil de anime_\n┣⊱ *#neko*\n┃➥ _Neko_\n┣⊱ *#pokemon*\n┃➥ _Imagen de Pokemon_\n┃\n┷━━━━━━━━▧▣▧━━━━━━━━`
+						imagenanim = await getBuffer(`https://pm1.narvii.com/6390/3d54d28407e76dd8343c4997d8306335b8e4eb0d_hq.jpg`)
+						client.sendMessage(from, imagenanim, image,{ caption: `${menuani}`,quoted: mek})
+						break
 	/*
 	]=========> MUSICA <=========[
 	*/
 				case 'sound1':
-		        case 'iri?':
-                case 'iri':
+		        	case 'iri?':
+                		case 'iri':
 					iri = fs.readFileSync('./sound/iri.mp3');
 					client.sendMessage(from, iri, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                  break
+                  			break
                
-            case 'sound2':
-            case 'abangjago':
-                iri2 = fs.readFileSync('./sound/abangjago.mp3');
+            			case 'sound2':
+            			case 'abangjago':
+                			iri2 = fs.readFileSync('./sound/abangjago.mp3');
 					client.sendMessage(from, iri2, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
-            case 'tarekses':
-            case 'tariksisnode index js':
-            case 'sound3':
-            case 'tareeksis':
-            case 'tareekses':
-                	iri3 = fs.readFileSync('./sound/tarekses.mp3');
+                			break
+					
+            			case 'tarekses':
+            			case 'tariksis':
+            			case 'sound3':
+            			case 'tareeksis':
+            			case 'tareekses':
+                			iri3 = fs.readFileSync('./sound/tarekses.mp3');
 					client.sendMessage(from, iri3, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
+                			break
 
 				case 'clover':
 					iri7 = fs.readFileSync('./sound/clover.mp3');
 					client.sendMessage(from, iri7, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 					break
-			case 'drstone':
-                	iri5 = fs.readFileSync('./sound/drstone.mp3');
+				case 'drstone':
+                			iri5 = fs.readFileSync('./sound/drstone.mp3');
 					client.sendMessage(from, iri5, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
-            case 'welotka':
-            case 'welutka':
-            case 'kangcopet':
-				iri4 = fs.readFileSync('./sound/welot.mp3');
-				client.sendMessage(from, iri4, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
+                			break
+            			case 'welotka':
+            			case 'welutka':
+            			case 'kangcopet':
+					iri4 = fs.readFileSync('./sound/welot.mp3');
+					client.sendMessage(from, iri4, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+                			break
 			
 				case 'sonido4':
-                	iri6 = fs.readFileSync('./sound/tuvirg.mp3');
+                			iri6 = fs.readFileSync('./sound/tuvirg.mp3');
 					client.sendMessage(from, iri6, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-                break
+                			break
+					
 				case 'bakemo1':
                 	iri8 = fs.readFileSync('./sound/bakemo1.mp3');
 					client.sendMessage(from, iri8, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
@@ -655,8 +668,8 @@ client.on('group-participants-update', async (anu) => {
 				   client.sendMessage(from, buf, image, { quoted: mek, caption: `${texs}`})
 				        break
 					
-                case 'name':
-                    teks = body.slice(6)
+                		case 'name':
+                    			teks = body.slice(6)
                     anu = await fetchJson(`https://arugaz.herokuapp.com/api/dewabatch?q=${teks}` , {method: 'get'})
                     thum = await getBuffer(anu.thumb)
 					anitext = (anu.result)
